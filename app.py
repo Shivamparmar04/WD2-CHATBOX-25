@@ -17,7 +17,7 @@ with st.form("chat_form"):
     submitted = st.form_submit_button("Get Response")
 
 if submitted and user_input:
-        response = openai.ChatCompletion.create(
+    response = openai.ChatCompletion.create(
         model="mistralai/mistral-7b-instruct:free",  # Free model ID
         messages=[
             {"role": "system", "content": f"Today’s date is {today}. You are a helpful assistant."},
