@@ -4,7 +4,7 @@ from datetime import datetime
 import pytz
 
 # Set the desired time zone (e.g., 'Asia/Kolkata' for Indian Standard Time)
-timezone = pytz.timezone("America/New York")  # Change this to your desired time zone
+timezone = pytz.timezone(" North America/New York")  # Change this to your desired time zone
 now = datetime.now(timezone).strftime("%A, %B %d, %Y %I:%M:%S %p")
 
 # OpenRouter API base and key
