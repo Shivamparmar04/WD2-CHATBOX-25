@@ -1,9 +1,11 @@
 import streamlit as st
 import openai
 from datetime import datetime
+import pytz
 
-# Get current date and time in 12-hour format with AM/PM
-now = datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p")
+# Get current date and time in New York timezone
+ny_tz = pytz.timezone("America/New_York")
+now_ny = datetime.now(ny_tz).strftime("%A, %B %d, %Y %I:%M:%S %p")  # 12-hour format with AM/PM
 
 # OpenRouter API base and key
 openai.api_base = "https://openrouter.ai/api/v1"
@@ -20,7 +22,7 @@ if submitted and user_input:
     response = openai.ChatCompletion.create(
         model="mistralai/mistral-7b-instruct:free",  # Free model ID
         messages=[
-            {"role": "system", "content": f"Today’s date and time is {now}. You are a helpful assistant."},
+            {"role": "system", "content": f"Today’s date and time in New York is {now_ny}. You are a helpful assistant."},
             {"role": "user", "content": user_input}
         ]
     )
