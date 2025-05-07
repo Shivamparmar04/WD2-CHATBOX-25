@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import pytz
 from datetime import date
-from zoneinfo import ZoneInfo
+from zoneinfo import zoneinfo
 
 # Get today's date (string)
 today = datetime.now(pytz.timezone("America/New_York")).strftime("%A, %B %d, %Y — %I:%M %p (%Z)")
