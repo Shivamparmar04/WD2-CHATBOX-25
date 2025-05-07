@@ -1,13 +1,14 @@
 import streamlit as st
 import openai
-import pytz
-from datetime import date
-from zoneinfo import ZoneInfo
+from datetime import datetime
+from pytz import timezone
 
 
-# Get today's date (string)
-timezone = ZoneInfo("America/New_York")
-today = date.today().strftime("%A, %B %d, %Y")
+# Get current time in a specific timezone
+now_utc = datetime.now(timezone('UTC'))
+now_pacific = datetime.now(timezone('US/Pacific'))
+print(now_utc)
+print(now_pacific)
 
 # OpenRouter API base and key
 openai.api_base = "https://openrouter.ai/api/v1"
