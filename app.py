@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 
 # Get today's date (string)
+timezone = ZoneInfo("America/New_York")
 today = date.today().strftime("%A, %B %d, %Y")
 
 # OpenRouter API base and key
