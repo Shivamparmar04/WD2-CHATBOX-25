@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
 from datetime import date
+from zoneinfo import ZoneInfo
 
 # Get today's date (string)
 set_timezone = ZoneInfo("Europe/Paris")  
