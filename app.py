@@ -4,6 +4,9 @@ import pytz
 from datetime import date
 from zoneinfo import zoneinfo
 
+import sys
+st.sidebar.markdown(f"**Python version:** {sys.version}")
+
 # Get today's date (string)
 today = datetime.now(pytz.timezone("America/New_York")).strftime("%A, %B %d, %Y — %I:%M %p (%Z)")
 
