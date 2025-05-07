@@ -5,7 +5,7 @@ from zoneinfo import ZoneInfo
 
 # Get today's date (string)
 set_timezone = ZoneInfo("Europe/Paris")  
-now_in_set = datetime.now(set_timezone)
+
 today = date.today().strftime("%A, %B %d, %Y")
 
 # OpenRouter API base and key
