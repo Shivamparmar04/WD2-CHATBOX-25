@@ -4,9 +4,7 @@ from datetime import date
 from zoneinfo import ZoneInfo
 
 # Get today's date (string)
-set_timezone = ZoneInfo("Europe/Paris")  
-
-today = date.today().strftime("%A, %B %d, %Y")
+oday = datetime.now(ZoneInfo("America/New_York")).strftime("%A, %B %d, %Y — %I:%M %p (%Z)")
 
 # OpenRouter API base and key
 openai.api_base = "https://openrouter.ai/api/v1"
