@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import pytz
 from datetime import date
-from zoneinfo import zoneinfo
+from zoneinfo import ZoneInfo
 
 
 # Get today's date (string)
