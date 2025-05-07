@@ -1,6 +1,6 @@
 import streamlit as st
 import openai
-from datetime import time
+from datetime import date
 
 
 # Get current time in a specific timezone
