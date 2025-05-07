@@ -2,8 +2,8 @@ import streamlit as st
 import openai
 from datetime import datetime
 
-# Get current date and time
-now = datetime.now().strftime("%A, %B %d, %Y %H:%M:%S")
+# Get current date and time in 12-hour format with AM/PM
+now = datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p")
 
 # OpenRouter API base and key
 openai.api_base = "https://openrouter.ai/api/v1"
@@ -25,3 +25,4 @@ if submitted and user_input:
         ]
     )
     st.write("Bot:", response.choices[0].message.content)
+
