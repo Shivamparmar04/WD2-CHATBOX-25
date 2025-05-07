@@ -1,11 +1,9 @@
 import streamlit as st
 import openai
-from datetime import date
+from datetime import datetime
 
-
-# Get current time in a specific timezone
-today = date.today().strftime("%A, %B %d, %Y")
-
+# Get current date and time
+now = datetime.now().strftime("%A, %B %d, %Y %H:%M:%S")
 
 # OpenRouter API base and key
 openai.api_base = "https://openrouter.ai/api/v1"
@@ -22,7 +20,7 @@ if submitted and user_input:
     response = openai.ChatCompletion.create(
         model="mistralai/mistral-7b-instruct:free",  # Free model ID
         messages=[
-            {"role": "system", "content": f"Today’s date is {today}. You are a helpful assistant."},
+            {"role": "system", "content": f"Today’s date and time is {now}. You are a helpful assistant."},
             {"role": "user", "content": user_input}
         ]
     )
